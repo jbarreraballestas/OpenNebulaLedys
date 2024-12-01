@@ -15,8 +15,15 @@ apt update
 # Actualizar paquetes de ubuntu
 apt upgrade -y
 
-# Instalar paquetes necesarios
+# Instalar paquetes necesarios para agregar repositorio de opennebula
 apt -y install gnupg wget apt-transport-https
+
+# Instalar herramientas de red
+apt install net-tools
+
+# Instalar herramienta de verificación de virtualización
+apt install cpu-checker -y
+kvm-ok
 
 # Agregar llave de acceso a repositorios de OpenNebula
 wget -q -O- https://downloads.opennebula.io/repo/repo2.key | gpg --dearmor --yes --output /etc/apt/keyrings/opennebula.gpg
@@ -49,11 +56,6 @@ user_pass=$(cat /var/lib/one/.one/one_auth)
 # Mostrar usuario y contraseña generada durante la instalación
 echo "Usuario y contraseña: $user_pass"
 
-# Instalar herramientas de red
-apt install net-tools
 
-# Instalar herramienta de verificación de virtualización
-apt install cpu-checker -y
-kvm-ok
 
 
