@@ -41,7 +41,7 @@ oneuser show
 
 # Mostrar las posibles urls de acceso
 echo "Inicia sesión en alguna de las siguientes direcciones:"
-ip -o -4 addr show | awk '{print "https://" substr($4, 1, index($4, "/")-1) ":8006/fireedge/sunstone"}'
+ip -o -4 addr show | awk '{print "https://" substr($4, 1, index($4, "/")-1) ":2616/fireedge/sunstone"}'
 
 # Obtener el usuario y contraseña
 user_pass=$(cat /var/lib/one/.one/one_auth)
