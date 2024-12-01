@@ -45,3 +45,5 @@ user_pass=$(cat /var/lib/one/.one/one_auth)
 # Mostrar usuario y contraseña generada durante la instalación
 echo "Usuario y contraseña: $user_pass"
 
+# Instalar herramientas de red
+apt install net-tools
